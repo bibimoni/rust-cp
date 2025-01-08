@@ -15,15 +15,21 @@ if [[ ! -f ${1} ]]; then
 fi
 
 basename=$(basename ${1}) #get file name
-shopt -s nullglob #count number of files in src/bin
-count=(*)
-count=${#numfiles[@]}
-file=$(echo "${1}" | sed -r "s/.+\/(.+)\..+/\1/") #get file name without the extension
-if [[ -f src/bin/"${count}${basename}" ]]; then
-  cat ${1} > src/bin/"${count}${basename}"
-  RUSTFLAGS="--cfg DEBUG" cargo r --bin "${count}${file}"
-else 
-  ((count=count+1))
-  cat ${1} > src/bin/"${count}${basename}"
-  RUSTFLAGS="--cfg DEBUG" cargo r --bin "${count}${file}"
-fi
+rust_file_path="$1" 
+problem="$(basename "$rust_file_path" .rs)"
+contest_name="$(basename "$(dirname "$rust_file_path")")"
+name="${contest_name}_${problem}"
+RUSTFLAGS="--cfg DEBUG" cargo r --bin ${name}
+
+# shopt -s nullglob #count number of files in src/bin
+# count=(*)
+# count=${#numfiles[@]}
+# file=$(echo "${1}" | sed -r "s/.+\/(.+)\..+/\1/") #get file name without the extension
+# if [[ -f src/bin/"${count}${basename}" ]]; then
+#   cat ${1} > src/bin/"${count}${basename}"
+#   RUSTFLAGS="--cfg DEBUG" cargo r --bin "${count}${file}"
+# else 
+#   ((count=count+1))
+#   cat ${1} > src/bin/"${count}${basename}"
+#   RUSTFLAGS="--cfg DEBUG" cargo r --bin "${count}${file}"
+# fi

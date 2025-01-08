@@ -27,25 +27,48 @@ if [[ $# == 3 ]]; then
   
   reg='^[0-9]+([.][0-9]+)?$'
   
+  append_to_cargo_toml() {
+    local rust_file_path="$1" 
+    local cargo_toml_path="./Cargo.toml"
+    local problem="$(basename "$rust_file_path" .rs)"
+    local contest_name="$(basename "$(dirname "$rust_file_path")")"
+    local name="${contest_name}_${problem}"
+    local bin_entry="[[bin]]\nname=\"$name\"\npath=\"$rust_file_path\"\n\n"
+
+    if grep -q "path=\"$rust_file_path\"" "$cargo_toml_path"; then
+      echo "Source file ${contest_name}/${problem}.rs has already been exists"
+    else
+      # Append the entry to Cargo.toml
+      echo -e "$bin_entry" >> "$cargo_toml_path"
+      echo "Source file ${contest_name}/${problem}.rs created"
+    fi
+  }
+
   if [[ ${3} =~ $reg ]]; then 
-    #create problems files
+    # Create problem files
     for (( i = 0 ; i < ${3}; i++ ));
     do
       ((n=i+97))
       fileId=$(printf "\\$(printf '%03o' "$n")")
-      if [[ ! -f "./src/${1}/${2}/${fileId}.rs" ]]; then
-        cat ./src/basic.rs >> ./src/${1}/${2}/${fileId}.rs
+      target_path="./src/${1}/${2}/${fileId}.rs"
+      if [[ ! -f "$target_path" ]]; then
+        cat ./src/basic.rs >> "$target_path"
+        append_to_cargo_toml "$target_path" # Call the function here
       fi
     done
   else 
-    if [[ ! -f "./src/${1}/${2}/${3}.rs" ]]; then
-      cat ./src/basic.rs >> ./src/${1}/${2}/${3}.rs
+    target_path="./src/${1}/${2}/${3}.rs"
+    if [[ ! -f "$target_path" ]]; then
+      cat ./src/basic.rs >> "$target_path"
+      append_to_cargo_toml "$target_path" # Call the function here
     fi
   fi
-else 
+
   if [[ $# == 2 ]]; then
-    if [[ ! -f "./src/${1}/${2}.rs" ]]; then
-      cat ./src/basic.rs >> ./src/${1}/${2}.rs
+    target_path="./src/${1}/${2}.rs"
+    if [[ ! -f "$target_path" ]]; then
+      cat ./src/basic.rs >> "$target_path"
+      append_to_cargo_toml "$target_path" # Call the function here
     fi
   fi
 fi

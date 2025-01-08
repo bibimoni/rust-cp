@@ -12,3 +12,7 @@ path = "src/vnoj/gss.rs"
 [dependencies]
 cargo-snippet = "0.6.5"
 proconio = "0.4.5"
+
+[[bin]]
+name="abc387_f"
+path="./src/atcoder/abc387/f.rs"
