@@ -14,8 +14,9 @@ if [[ ! -f ${1} ]]; then
   exit 1
 fi
 
-basename=$(basename ${1}) #get file name
-rust_file_path="$1" 
+abs_path=$(realpath "$1")
+basename=$(basename "${abs_path}") #get file name
+rust_file_path="${abs_path}" 
 problem="$(basename "$rust_file_path" .rs)"
 contest_name="$(basename "$(dirname "$rust_file_path")")"
 name="${contest_name}_${problem}"

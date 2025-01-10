@@ -15,22 +15,24 @@ if [[ $# < 2 ]]; then
 fi
 
 #check if contest folder exists
-if [[ ! -d "./src/${1}" ]]; then 
-  mkdir "./src/${1}"  
+if [[ ! -d "/Users/distiled/codeStuff/rust/rustcp/src/${1}" ]]; then 
+  mkdir "/Users/distiled/codeStuff/rust/rustcp/src/${1}"  
 fi
 
 if [[ $# == 3 ]]; then
   #check if contest id exists
-  if [[ ! -d "./src/${1}/${2}" ]]; then
-    mkdir "./src/${1}/${2}"  
+  if [[ ! -d "/Users/distiled/codeStuff/rust/rustcp/src/${1}/${2}" ]]; then
+    mkdir "/Users/distiled/codeStuff/rust/rustcp/src/${1}/${2}"  
   fi
   
   reg='^[0-9]+([.][0-9]+)?$'
   
   append_to_cargo_toml() {
     local rust_file_path="$1" 
-    local cargo_toml_path="./Cargo.toml"
+    local cargo_toml_path="/Users/distiled/codeStuff/rust/rustcp/Cargo.toml"
+
     local problem="$(basename "$rust_file_path" .rs)"
+
     local contest_name="$(basename "$(dirname "$rust_file_path")")"
     local name="${contest_name}_${problem}"
     local bin_entry="[[bin]]\nname=\"$name\"\npath=\"$rust_file_path\"\n\n"
@@ -50,24 +52,24 @@ if [[ $# == 3 ]]; then
     do
       ((n=i+97))
       fileId=$(printf "\\$(printf '%03o' "$n")")
-      target_path="./src/${1}/${2}/${fileId}.rs"
+      target_path="/Users/distiled/codeStuff/rust/rustcp/src/${1}/${2}/${fileId}.rs"
       if [[ ! -f "$target_path" ]]; then
-        cat ./src/basic.rs >> "$target_path"
+        cat /Users/distiled/codeStuff/rust/rustcp/src/basic.rs >> "$target_path"
         append_to_cargo_toml "$target_path" # Call the function here
       fi
     done
   else 
-    target_path="./src/${1}/${2}/${3}.rs"
+    target_path="/Users/distiled/codeStuff/rust/rustcp/src/${1}/${2}/${3}.rs"
     if [[ ! -f "$target_path" ]]; then
-      cat ./src/basic.rs >> "$target_path"
+      cat /Users/distiled/codeStuff/rust/rustcp/src/basic.rs >> "$target_path"
       append_to_cargo_toml "$target_path" # Call the function here
     fi
   fi
 
   if [[ $# == 2 ]]; then
-    target_path="./src/${1}/${2}.rs"
+    target_path="/Users/distiled/codeStuff/rust/rustcp/src/${1}/${2}.rs"
     if [[ ! -f "$target_path" ]]; then
-      cat ./src/basic.rs >> "$target_path"
+      cat /Users/distiled/codeStuff/rust/rustcp/src/basic.rs >> "$target_path"
       append_to_cargo_toml "$target_path" # Call the function here
     fi
   fi
