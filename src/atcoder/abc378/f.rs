@@ -27,13 +27,13 @@ fn main() {
   let mut deg: Vec<usize> = vec![0; n + 1];
   let mut e: Vec<(usize, usize)> = vec![(0, 0); n + 1];
   for _ in 0..n - 1 {
-  let u: usize = scan.next();
-  let v: usize = scan.next();
-  adj[u].push(v);
-  adj[v].push(u);
-  deg[u] += 1;
-  deg[v] += 1;
-  e.push((u, v));
+    let u: usize = scan.next();
+    let v: usize = scan.next();
+    adj[u].push(v);
+    adj[v].push(u);
+    deg[u] += 1;
+    deg[v] += 1;
+    e.push((u, v));
   }
 
   let mut uf = union_find::UnionFind::new(n + 1);

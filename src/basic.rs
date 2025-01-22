@@ -11,8 +11,11 @@ use std::{
 };
 
 macro_rules! dbg {
-  ($($arg:tt)*) => { #[cfg(DEBUG)] { std::dbg!($($arg)*); } };
+    () => { ... };
+    ($val:expr $(,)?) => { ... };
+    ($($val:expr),+ $(,)?) => { ... };
 }
+
 macro_rules! eprintln {
   ($($arg:tt)*) => { #[cfg(DEBUG)] { std::eprintln!($($arg)*); } };
 }

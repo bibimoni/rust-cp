@@ -5,6 +5,10 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[lib]
+name = "modint"
+path = "src/mylib/lib.rs"
+
 [[bin]]
 name = "vnoj"
 path = "src/vnoj/gss.rs"
@@ -34,5 +38,35 @@ path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc378/e.rs"
 [[bin]]
 name="abc378_f"
 path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc378/f.rs"
+
+
+[[bin]]
+name="abc375_f"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc375/f.rs"
+
+
+[[bin]]
+name="abc355_f"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc355/f.rs"
+
+
+[[bin]]
+name="abc370_e"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc370/e.rs"
+
+
+[[bin]]
+name="abc373_a"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc373/a.rs"
+
+
+[[bin]]
+name="2060_e"
+path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2060/e.rs"
+
+
+[[bin]]
+name="2060_f"
+path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2060/f.rs"
 
 
