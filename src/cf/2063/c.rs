@@ -11,8 +11,9 @@ use std::{
 };
 
 macro_rules! dbg {
-  ($($arg:tt)*) => { #[cfg(DEBUG)] { std::dbg!($($arg)*); } };
+    ($($arg:tt)*) => { #[cfg(DEBUG)] { std::dbg!($($arg)*); } };
 }
+
 macro_rules! eprintln {
   ($($arg:tt)*) => { #[cfg(DEBUG)] { std::eprintln!($($arg)*); } };
 }
@@ -21,6 +22,48 @@ fn main() {
   let mut scan = Scan::default();
   let stdout = std::io::stdout();
   let mut writer = std::io::BufWriter::new(stdout.lock());
+  
+  let tt: usize = scan.next();
+  for _ in 0..tt {
+    let n = scan.next::<usize>();
+    let mut adj: Vec<Vec<usize>> = vec![vec![]; n];
+    let mut deg: Vec<usize> = vec![0; n];
+
+    for _ in 0..n - 1 {
+      let mut u: usize = scan.next::<usize>();
+      let mut v: usize = scan.next::<usize>();
+      u -= 1;
+      v -= 1;
+      adj[u].push(v);
+      adj[v].push(u);
+      deg[u] += 1;
+      deg[v] += 1;
+    }
+    
+    let mut st: BTreeSet<(usize, usize)> = BTreeSet::new();
+    for (u, value) in deg.iter().enumerate() {
+      st.insert((*value, u));
+    }
+    let mut ans = 0;
+    for u in 0..n {
+      for v in adj[u].iter() {
+        ans = max(ans,deg[u] + deg[*v] - 2);
+        st.remove(&(deg[*v], *v));
+      }
+      st.remove(&(deg[u], u));
+      
+      if let Some((val, _)) = st.last() {
+        ans = max(ans, deg[u] + val - 1);
+      }
+      
+      for v in adj[u].iter() {
+        st.insert((deg[*v], *v));
+      }
+      st.insert((deg[u], u));
+    }
+    
+    writeln!(writer, "{}", ans).unwrap();
+  }
 }
 
 #[derive(Default)] //{{{

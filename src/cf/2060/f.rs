@@ -1,3 +1,4 @@
+// time-limit: 4000
 #![allow(unexpected_cfgs, unused_macros, unused_imports)]
 /**
  * Author: distiled
@@ -11,9 +12,7 @@ use std::{
 };
 
 macro_rules! dbg {
-    () => { ... };
-    ($val:expr $(,)?) => { ... };
-    ($($val:expr),+ $(,)?) => { ... };
+    ($($arg:tt)*) => { #[cfg(DEBUG)] { std::dbg!($($arg)*); } };
 }
 
 macro_rules! eprintln {
@@ -25,11 +24,28 @@ fn main() {
   let stdout = std::io::stdout();
   let mut writer = std::io::BufWriter::new(stdout.lock());
   
+  const LG: usize = 18;
   const K: usize = 100_000;
-  let mut divs: Vec<Vec<usize>> = vec![vec![]; K + 1];
-  for divisor in 1..=K {
-    for mul in (divisor..=K).step_by(divisor) {
-      
+  let mut dp = vec![[Mint::zero(); LG]; K + 1];
+  
+  let mut non_one_divs: Vec<Vec<usize>> = vec![vec![]; K + 1];
+  for div in 2..=K {
+    for mul in (div * 2..=K).step_by(div) {
+      non_one_divs[mul].push(div);
+    }
+  }
+  
+  for len in 1..LG {
+    dp[1][len] = Mint::one();
+  }
+  
+  for x in 2..=K {
+    dp[x][1] = Mint::one();
+    for len in 2..(LG - 1) {
+      for div in non_one_divs[x].iter() {
+        let prev = dp[x / *div][len - 1];
+        dp[x][len] += prev;
+      }
     }
   }
   
@@ -37,10 +53,30 @@ fn main() {
   for _ in 0..tt {
     let k = scan.next::<usize>();
     let n = scan.next::<usize>();
-    
-    let mut coeff = BinomialCoefficient::<Mint>::new();
-    
-    
+
+    fn binom_brute(n: usize, k: usize) -> Mint {
+      if n < k {
+        return Mint::zero();
+      }
+      if k > n - k {
+        return binom_brute(n, n - k);
+      }
+      let mut result = Mint::one();
+      for i in 0..k {
+        result *= <modint::ModNum<998244353> as modint::NumTrait>::from((n - i) as i64) 
+          / <modint::ModNum<998244353> as modint::NumTrait>::from((i + 1) as i64);
+      }
+      result
+    }
+    print!("{} ", Mint::new(n as i64));
+    for x in 2..=k {
+      let mut ans = Mint::new(0);
+      for len in 1..(LG - 1) {
+        ans += dp[x][len] * binom_brute(n + 1, len + 1);
+      }
+      print!("{} ", ans);
+    }
+    println!();
   }
 }
 
@@ -150,45 +186,6 @@ pub fn power<const MOD: i64>(a: ModNum<MOD>, b: usize) -> ModNum<MOD> {
 }
 const MOD: i64 = 998_244_353;
 pub type Mint = ModNum<MOD>;
-
-// required modnum (Mint) to use
-use binomial_coefficient::*;
-pub mod binomial_coefficient {
-  use crate::modint::NumTrait;
-  #[derive(Clone, Debug, PartialEq, Eq)]
-  pub struct BinomialCoefficient<T: NumTrait + Clone + std::ops::Mul + std::ops::Div> {
-    fact: Vec<T>,
-    inv_fact: Vec<T>,
-  }
-
-  impl<T: NumTrait + Clone + std::ops::Mul<Output = T> + std::ops::Div<Output = T>> Default for BinomialCoefficient<T> {
-    fn default() -> Self {
-        Self::new()
-    }
-  }
-
-  impl<T: NumTrait + Clone + std::ops::Mul<Output = T> + std::ops::Div<Output = T>> BinomialCoefficient<T>{
-    pub fn new() -> BinomialCoefficient<T> {
-      BinomialCoefficient {
-        fact: vec![T::one(); 1],
-        inv_fact: vec![T::one(); 1],
-      }
-    }
-    
-    pub fn C(&mut self, n: i64, mut k: i64) -> T {
-      if k < 0 || k > n {
-        return T::zero();
-      }
-      k = k.min(n - k);
-      while self.fact.len() < (n + 1) as usize {
-        self.fact.push((self.fact.last().unwrap().clone()) * T::from(self.fact.len() as i64));
-        self.inv_fact.push(T::one() / self.fact.last().unwrap().clone());
-      }
-      
-      self.fact[n as usize].clone() * self.inv_fact[k as usize].clone() * self.inv_fact[(n - k) as usize].clone()
-    }
-  }
-}
 
 #[derive(Default)] //{{{
 struct Scan {

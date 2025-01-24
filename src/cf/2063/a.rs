@@ -11,8 +11,11 @@ use std::{
 };
 
 macro_rules! dbg {
-  ($($arg:tt)*) => { #[cfg(DEBUG)] { std::dbg!($($arg)*); } };
+    () => { ... };
+    ($val:expr $(,)?) => { ... };
+    ($($val:expr),+ $(,)?) => { ... };
 }
+
 macro_rules! eprintln {
   ($($arg:tt)*) => { #[cfg(DEBUG)] { std::eprintln!($($arg)*); } };
 }
@@ -21,6 +24,18 @@ fn main() {
   let mut scan = Scan::default();
   let stdout = std::io::stdout();
   let mut writer = std::io::BufWriter::new(stdout.lock());
+  
+  let tt = scan.next();
+  for _ in 0..tt {
+    let l: usize = scan.next();
+    let r: usize = scan.next();
+    
+    if l == r && r == 1 {
+      writeln!(&mut writer, "{}", l).unwrap();
+    } else {
+      writeln!(&mut writer, "{}", r - l).unwrap();
+    }
+  }
 }
 
 #[derive(Default)] //{{{

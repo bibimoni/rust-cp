@@ -11,7 +11,7 @@ use std::{
 };
 
 macro_rules! dbg {
-  ($($arg:tt)*) => { #[cfg(DEBUG)] { std::dbg!($($arg)*); } };
+    ($($arg:tt)*) => { #[cfg(DEBUG)] { std::dbg!($($arg)*); } };
 }
 macro_rules! eprintln {
   ($($arg:tt)*) => { #[cfg(DEBUG)] { std::eprintln!($($arg)*); } };
@@ -21,6 +21,31 @@ fn main() {
   let mut scan = Scan::default();
   let stdout = std::io::stdout();
   let mut writer = std::io::BufWriter::new(stdout.lock());
+  
+  let tt = scan.next();
+  for _ in 0..tt {
+    let n: usize = scan.next();
+    let l: usize = scan.next::<usize>() - 1;
+    let r: usize = scan.next::<usize>() - 1;
+    let a: Vec<i64> = (0..n).map(|_| scan.next()).collect();
+    
+    let mut seg: Vec<i64> = vec![];
+    let mut ls: Vec<i64> = vec![];
+    let mut rs: Vec<i64> = vec![];
+    
+    for i in 0..=r {
+      ls.push(a[i]);
+    }
+    for i in l..n {
+      rs.push(a[i]);
+    }
+    
+    ls.sort();
+    rs.sort();
+    let s_1: i64 = ls.iter().take(r - l + 1).sum();
+    let s_2: i64 = rs.iter().take(r - l + 1).sum();
+    writeln!(writer, "{}", min(s_1, s_2)).unwrap();
+  }
 }
 
 #[derive(Default)] //{{{
