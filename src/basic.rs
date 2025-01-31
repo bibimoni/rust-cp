@@ -23,7 +23,7 @@ fn main() {
   let mut writer = std::io::BufWriter::new(stdout.lock());
 }
 
-#[derive(Default)] //{{{
+#[derive(Default)]
 struct Scan {
   buff: Vec<String>,
 }
@@ -59,21 +59,4 @@ impl Scan {
   fn read_line_till_empty(&mut self) -> Option<String> {
     self.read_line().filter(|line| !line.is_empty())
   }
-}
- 
-// Helpers
-#[derive(Copy, Clone, Eq, PartialEq)]
-#[allow(dead_code)]
-struct IOrd<T>(T);
-impl<T: Ord> Ord for IOrd<T> {
-  fn cmp(&self, other: &Self) -> Ordering {
-    other.0.cmp(&self.0)
-  }
-}
- 
-impl<T: PartialOrd> PartialOrd for IOrd<T> {
-  fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
-    other.0.partial_cmp(&self.0)
-  }
-} //}}}
-// template source (darkkcyan)
+} // template source (darkkcyan)
