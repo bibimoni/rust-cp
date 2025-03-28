@@ -20,7 +20,7 @@ rust_file_path="${abs_path}"
 problem="$(basename "$rust_file_path" .rs)"
 contest_name="$(basename "$(dirname "$rust_file_path")")"
 name="${contest_name}_${problem}"
-RUSTFLAGS="--cfg DEBUG" cargo r --bin ${name}
+RUST_MIN_STACK=67108864 RUSTFLAGS="--cfg DEBUG" cargo r --bin ${name}
 
 # shopt -s nullglob #count number of files in src/bin
 # count=(*)

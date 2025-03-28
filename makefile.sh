@@ -38,7 +38,7 @@ if [[ $# == 3 ]]; then
     local bin_entry="[[bin]]\nname=\"$name\"\npath=\"$rust_file_path\"\n\n"
 
     if grep -q "path=\"$rust_file_path\"" "$cargo_toml_path"; then
-      echo "Source file ${contest_name}/${problem}.rs has already been exists"
+      echo "Source file ${contest_name}/${problem}.rs has already been existed"
     else
       # Append the entry to Cargo.toml
       echo -e "$bin_entry" >> "$cargo_toml_path"

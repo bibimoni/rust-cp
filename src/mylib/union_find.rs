@@ -1,4 +1,4 @@
-#[allow(clippy::module_inception)]
+use union_find::*;
 pub mod union_find {
   pub struct UnionFind {
     parent: Vec<i32>,
@@ -19,7 +19,7 @@ pub mod union_find {
       }
       let size1 = self.parent[x_root];
       let size2 = self.parent[y_root];
-      let (new_root, merged_root) = if size1 <= size2 {
+      let (new_root, merged_root) = if size1 >= size2 {
         self.parent[x_root] += size2;
         self.parent[y_root] = x_root as i32;
         (x_root, y_root)
@@ -73,8 +73,7 @@ pub mod union_find {
     }
     pub fn init(&mut self) {
       self.stack.clear();
-      for (i, (parent, size)) in self.parent.iter_mut().zip(self.size.iter_mut()).enumerate()
-      {
+      for (i, (parent, size)) in self.parent.iter_mut().zip(self.size.iter_mut()).enumerate() {
         *parent = i as u32;
         *size = 1;
       }

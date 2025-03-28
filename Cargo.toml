@@ -18,125 +18,529 @@ cargo-snippet = "0.6.5"
 proconio = "0.4.5"
 
 [[bin]]
-name="abc387_f"
-path="./src/atcoder/abc387/f.rs"
+name = "abc387_f"
+path = "./src/atcoder/abc387/f.rs"
 
 [[bin]]
-name="abc363_e"
-path="./src/atcoder/abc363/e.rs"
+name = "abc363_e"
+path = "./src/atcoder/abc363/e.rs"
 
 [[bin]]
-name="abc363_f"
-path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc363/f.rs"
-
-
-[[bin]]
-name="abc378_e"
-path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc378/e.rs"
+name = "abc363_f"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc363/f.rs"
 
 
 [[bin]]
-name="abc378_f"
-path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc378/f.rs"
+name = "abc378_e"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc378/e.rs"
 
 
 [[bin]]
-name="abc375_f"
-path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc375/f.rs"
+name = "abc378_f"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc378/f.rs"
 
 
 [[bin]]
-name="abc355_f"
-path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc355/f.rs"
+name = "abc375_f"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc375/f.rs"
 
 
 [[bin]]
-name="abc370_e"
-path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc370/e.rs"
+name = "abc355_f"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc355/f.rs"
 
 
 [[bin]]
-name="abc373_a"
-path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc373/a.rs"
+name = "abc370_e"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc370/e.rs"
 
 
 [[bin]]
-name="2060_e"
-path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2060/e.rs"
+name = "abc373_a"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc373/a.rs"
 
 
 [[bin]]
-name="2060_f"
-path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2060/f.rs"
+name = "2060_e"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/cf/2060/e.rs"
 
 
 [[bin]]
-name="2063_a"
-path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2063/a.rs"
+name = "2060_f"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/cf/2060/f.rs"
 
 
 [[bin]]
-name="2063_b"
-path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2063/b.rs"
+name = "2063_a"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/cf/2063/a.rs"
 
 
 [[bin]]
-name="2063_c"
-path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2063/c.rs"
+name = "2063_b"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/cf/2063/b.rs"
 
 
 [[bin]]
-name="2063_d"
-path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2063/d.rs"
+name = "2063_c"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/cf/2063/c.rs"
 
 
 [[bin]]
-name="abc389_f"
-path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc389/f.rs"
+name = "2063_d"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/cf/2063/d.rs"
 
 
 [[bin]]
-name="abc347_f"
-path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc347/f.rs"
+name = "abc389_f"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc389/f.rs"
 
 
 [[bin]]
-name="abc390_a"
-path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc390/a.rs"
+name = "abc347_f"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc347/f.rs"
 
 
 [[bin]]
-name="abc390_b"
-path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc390/b.rs"
+name = "abc390_a"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc390/a.rs"
 
 
 [[bin]]
-name="abc390_c"
-path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc390/c.rs"
+name = "abc390_b"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc390/b.rs"
 
 
 [[bin]]
-name="abc390_d"
-path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc390/d.rs"
+name = "abc390_c"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc390/c.rs"
 
 
 [[bin]]
-name="abc390_e"
-path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc390/e.rs"
+name = "abc390_d"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc390/d.rs"
 
 
 [[bin]]
-name="abc390_f"
-path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc390/f.rs"
+name = "abc390_e"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc390/e.rs"
 
 
 [[bin]]
-name="abc389_e"
-path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc389/e.rs"
+name = "abc390_f"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc390/f.rs"
 
 
 [[bin]]
-name="2062_e"
-path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2062/e.rs"
+name = "abc389_e"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc389/e.rs"
+
+
+[[bin]]
+name = "2062_e"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/cf/2062/e.rs"
+
+
+[[bin]]
+name = "2062_d"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/cf/2062/d.rs"
+
+
+[[bin]]
+name = "abc369_e"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc369/e.rs"
+
+
+[[bin]]
+name = "abc354_f"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc354/f.rs"
+
+
+[[bin]]
+name = "abc165_f"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc165/f.rs"
+
+
+[[bin]]
+name = "abc324_f"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc324/f.rs"
+
+
+[[bin]]
+name = "abc392_d"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc392/d.rs"
+
+
+[[bin]]
+name = "abc392_e"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc392/e.rs"
+
+
+[[bin]]
+name = "abc350_f"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc350/f.rs"
+
+
+[[bin]]
+name = "abc393_a"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc393/a.rs"
+
+
+[[bin]]
+name = "abc393_b"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc393/b.rs"
+
+
+[[bin]]
+name = "abc393_c"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc393/c.rs"
+
+
+[[bin]]
+name = "abc393_d"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc393/d.rs"
+
+
+[[bin]]
+name = "abc393_e"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc393/e.rs"
+
+
+[[bin]]
+name = "abc393_f"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc393/f.rs"
+
+
+[[bin]]
+name = "bedao_r21_a"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/vnoj/bedao_r21/a.rs"
+
+
+[[bin]]
+name = "bedao_r21_b"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/vnoj/bedao_r21/b.rs"
+
+
+[[bin]]
+name = "bedao_r21_c"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/vnoj/bedao_r21/c.rs"
+
+
+[[bin]]
+name = "bedao_r21_d"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/vnoj/bedao_r21/d.rs"
+
+
+[[bin]]
+name = "bedao_r21_e"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/vnoj/bedao_r21/e.rs"
+
+
+[[bin]]
+name = "contest_problem_collab_gdsc_refine_graph"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/polygon/contest_problem_collab_gdsc/refine_graph.rs"
+
+
+[[bin]]
+name = "contest_problem_collab_gdsc_largest_sum_rectangle"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/polygon/contest_problem_collab_gdsc/largest_sum_rectangle.rs"
+
+
+[[bin]]
+name = "contest_problem_collab_gdsc_largest_sum_rectangle_brute"
+path = "/Users/distiled/codeStuff/rust/rustcp/src/polygon/contest_problem_collab_gdsc/largest_sum_rectangle_brute.rs"
+
+[[bin]]
+name="contest_problem_collab_gdsc_gdsc_bkac"
+path="/Users/distiled/codeStuff/rust/rustcp/src/polygon/contest_problem_collab_gdsc/gdsc_bkac.rs"
+
+
+[[bin]]
+name="contest_problem_collab_gdsc_balls"
+path="/Users/distiled/codeStuff/rust/rustcp/src/polygon/contest_problem_collab_gdsc/balls.rs"
+
+
+[[bin]]
+name="contest_problem_collab_gdsc_context_switch_sort"
+path="/Users/distiled/codeStuff/rust/rustcp/src/polygon/contest_problem_collab_gdsc/context_switch_sort.rs"
+
+
+[[bin]]
+name="abc394_a"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc394/a.rs"
+
+
+[[bin]]
+name="abc394_b"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc394/b.rs"
+
+
+[[bin]]
+name="abc394_c"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc394/c.rs"
+
+
+[[bin]]
+name="abc394_d"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc394/d.rs"
+
+
+[[bin]]
+name="abc394_e"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc394/e.rs"
+
+
+[[bin]]
+name="abc394_f"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc394/f.rs"
+
+
+[[bin]]
+name="contest_problem_collab_gdsc_product_10"
+path="/Users/distiled/codeStuff/rust/rustcp/src/polygon/contest_problem_collab_gdsc/product_10.rs"
+
+
+[[bin]]
+name="2072_a"
+path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2072/a.rs"
+
+
+[[bin]]
+name="2072_b"
+path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2072/b.rs"
+
+
+[[bin]]
+name="2072_c"
+path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2072/c.rs"
+
+
+[[bin]]
+name="2072_d"
+path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2072/d.rs"
+
+
+[[bin]]
+name="2072_e"
+path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2072/e.rs"
+
+
+[[bin]]
+name="2072_f"
+path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2072/f.rs"
+
+
+[[bin]]
+name="problem_vosplay"
+path="/Users/distiled/codeStuff/rust/rustcp/src/vnoj/problem/vosplay.rs"
+
+
+[[bin]]
+name="abc394_g"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc394/g.rs"
+
+
+[[bin]]
+name="abc395_a"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc395/a.rs"
+
+
+[[bin]]
+name="abc395_b"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc395/b.rs"
+
+
+[[bin]]
+name="abc395_c"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc395/c.rs"
+
+
+[[bin]]
+name="abc395_d"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc395/d.rs"
+
+
+[[bin]]
+name="abc395_e"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc395/e.rs"
+
+
+[[bin]]
+name="abc395_f"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc395/f.rs"
+
+
+[[bin]]
+name="abc396_a"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc396/a.rs"
+
+
+[[bin]]
+name="abc396_b"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc396/b.rs"
+
+
+[[bin]]
+name="abc396_c"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc396/c.rs"
+
+
+[[bin]]
+name="abc396_d"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc396/d.rs"
+
+
+[[bin]]
+name="abc396_e"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc396/e.rs"
+
+
+[[bin]]
+name="abc396_f"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc396/f.rs"
+
+
+[[bin]]
+name="2074_a"
+path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2074/a.rs"
+
+
+[[bin]]
+name="2074_b"
+path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2074/b.rs"
+
+
+[[bin]]
+name="2074_c"
+path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2074/c.rs"
+
+
+[[bin]]
+name="2074_d"
+path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2074/d.rs"
+
+
+[[bin]]
+name="2074_e"
+path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2074/e.rs"
+
+
+[[bin]]
+name="2074_f"
+path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2074/f.rs"
+
+
+[[bin]]
+name="abc397_6]"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc397/6].rs"
+
+
+[[bin]]
+name="abc397_a"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc397/a.rs"
+
+
+[[bin]]
+name="abc397_b"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc397/b.rs"
+
+
+[[bin]]
+name="abc397_c"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc397/c.rs"
+
+
+[[bin]]
+name="abc397_d"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc397/d.rs"
+
+
+[[bin]]
+name="abc397_e"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc397/e.rs"
+
+
+[[bin]]
+name="abc397_f"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc397/f.rs"
+
+
+[[bin]]
+name="abc398_a"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc398/a.rs"
+
+
+[[bin]]
+name="abc398_b"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc398/b.rs"
+
+
+[[bin]]
+name="abc398_c"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc398/c.rs"
+
+
+[[bin]]
+name="abc398_d"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc398/d.rs"
+
+
+[[bin]]
+name="abc398_e"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc398/e.rs"
+
+
+[[bin]]
+name="abc398_f"
+path="/Users/distiled/codeStuff/rust/rustcp/src/atcoder/abc398/f.rs"
+
+
+[[bin]]
+name="2085_a"
+path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2085/a.rs"
+
+
+[[bin]]
+name="2085_b"
+path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2085/b.rs"
+
+
+[[bin]]
+name="2085_c"
+path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2085/c.rs"
+
+
+[[bin]]
+name="2085_d"
+path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2085/d.rs"
+
+
+[[bin]]
+name="2091_a"
+path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2091/a.rs"
+
+
+[[bin]]
+name="2091_b"
+path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2091/b.rs"
+
+
+[[bin]]
+name="2091_c"
+path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2091/c.rs"
+
+
+[[bin]]
+name="2091_d"
+path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2091/d.rs"
+
+
+[[bin]]
+name="2091_e"
+path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2091/e.rs"
+
+
+[[bin]]
+name="2091_f"
+path="/Users/distiled/codeStuff/rust/rustcp/src/cf/2091/f.rs"
 
 
